@@ -1,30 +1,34 @@
 import React, { Component } from "react";
-import { ReactElement } from "react";
 import { menuItems } from "./MenuItems";
-import { DiReact } from 'react-icons/di';
+import { DiReact } from "react-icons/di";
 import "./Navbar.css";
-import "./Button.css"
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
-
+import { MdOutlineMenu } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 
 class Navbar extends Component {
+  state = { clicked: false };
 
-    state = {clicked:false}
-
-    handleClick = () => {
-        this.setState({clicked: !this.state.clicked})
-    }
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
 
   render() {
     return (
       <nav className="navbarItems">
-        <h1 className="navbarLogo">React</h1>
-        <DiReact color="white" size="35px"/>
-        <div className="menuIcon" onClick={this.handleClick}>
-            <i>{this.state.clicked ? <GrClose size="35px" color="white"/> : <GiHamburgerMenu size="35px" color="white"/>}</i>
+        <div className="navbarLogo">
+          <h1>React Navbar</h1>
+          <DiReact color="white" size="35px" />
         </div>
-        <ul className={this.state.clicked ? "menuIcon" : "navMenu"}>
+        <div className="menuIcon" onClick={this.handleClick}>
+          <i>
+            {this.state.clicked ? (
+              <MdClose color="white" />
+            ) : (
+              <MdOutlineMenu color="white" />
+            )}
+          </i>
+        </div>
+        <ul className={this.state.clicked ? "navMenu active" : "navMenu"}>
           {menuItems.map((item, index) => {
             return (
               <li key={index}>
@@ -35,7 +39,6 @@ class Navbar extends Component {
             );
           })}
         </ul>
-        <button className="btn">Login</button>
       </nav>
     );
   }
