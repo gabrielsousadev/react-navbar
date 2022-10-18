@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import { menuItems } from "./MenuItems";
 import { DiReact } from 'react-icons/di';
 import "./Navbar.css";
+import "./Button.css"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
@@ -34,6 +35,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
+        <button className="btn">Login</button>
       </nav>
     );
   }
