@@ -9,4 +9,5 @@
 .content h1
 {
     font-size: 100px;
+    text-transform: uppercase;
 }

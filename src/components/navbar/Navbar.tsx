@@ -4,6 +4,7 @@ import { DiReact } from "react-icons/di";
 import "./Navbar.css";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdClose } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   state = { clicked: false };
