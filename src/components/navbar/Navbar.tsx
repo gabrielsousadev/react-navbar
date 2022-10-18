@@ -21,9 +21,9 @@ class Navbar extends Component {
         <h1 className="navbarLogo">React</h1>
         <DiReact color="white" size="35px"/>
         <div className="menuIcon" onClick={this.handleClick}>
-            <i>{!this.state.clicked ? <GiHamburgerMenu/> : <GrClose/>}</i>
+            <i>{this.state.clicked ? <GrClose size="35px" color="white"/> : <GiHamburgerMenu size="35px" color="white"/>}</i>
         </div>
-        <ul>
+        <ul className={this.state.clicked ? "menuIcon" : "navMenu"}>
           {menuItems.map((item, index) => {
             return (
               <li key={index}>
