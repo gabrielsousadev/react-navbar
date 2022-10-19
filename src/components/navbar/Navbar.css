@@ -43,11 +43,6 @@
     transition: all 0.2s ease-out;
 }
 
-.navLinksMobile
-{
-    display: none;
-}
-
 .menuIcon
 {
     display: none;
